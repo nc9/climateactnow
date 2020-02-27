@@ -200,15 +200,15 @@ const Grid = () => {
 
 const App = () => (
   <div className="App">
-    <h2>Climate Action Australia Vote Data</h2>
+    <h2>Climate Act Now Petition Data</h2>
     <h3>
       Vote at{" "}
       <a href="https://www.climateactnow.com.au/">climateactnow.com.au</a>
     </h3>
     <p>
-      Click column headings to sort. Double click to filter. [
-      <a href="https://github.com/4dwins/climatevotedata">code</a>] [
-      <a href="https://twitter.com/4dwins">@4dwins</a>]
+      [<a href="https://github.com/opendataau/climateactnow">code</a>] by [
+      <a href="https://twitter.com/4dwins">@4dwins</a>] and{" "}
+      <a href="https://github.com/opendataau">Open Data AU</a>
     </p>
     <p>
       <i>
