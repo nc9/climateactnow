@@ -4,6 +4,10 @@ import MaterialTable from "material-table"
 import data from "./vote_data.json"
 import "./index.css"
 
+import EmailIcon from "@material-ui/icons/Email"
+import FacebookIcon from "@material-ui/icons/Facebook"
+import TwitterIcon from "@material-ui/icons/Twitter"
+
 import AddBox from "@material-ui/icons/AddBox"
 import ArrowDownward from "@material-ui/icons/ArrowDownward"
 import Check from "@material-ui/icons/Check"
@@ -50,6 +54,24 @@ const defaultColumnProperties = {
   filtering: true,
 }
 
+const EM = ({ email }) => (
+  <a href={"mailto:" + email} target="_new">
+    <EmailIcon style={{ color: "#333" }} />
+  </a>
+)
+
+const FB = ({ username }) => (
+  <a href={"https://www.facebook.com/" + username} target="_new">
+    <FacebookIcon />
+  </a>
+)
+
+const TW = ({ username }) => (
+  <a href={"https://www.twitter.com/" + username} target="_new">
+    <TwitterIcon />
+  </a>
+)
+
 const columnMap = {
   preferred_name: {
     title: "Member Name",
@@ -81,14 +103,30 @@ const columnMap = {
     type: "numeric",
     filtering: false,
   },
-  // twitter: {
-  //   title: "Twitter",
-  //   // sortable: true,
-  // },
-  // fbook: {
-  //   title: "Facebook",
-  //   sortable: true,
-  // },
+  email: {
+    title: "",
+    filtering: false,
+    sortable: false,
+    width: 20,
+    render: rowData =>
+      rowData.email ? <EM email={rowData.email} /> : undefined,
+  },
+  twitter: {
+    title: "",
+    filtering: false,
+    sortable: false,
+    width: 20,
+    render: rowData =>
+      rowData.twitter ? <TW username={rowData.twitter} /> : undefined,
+  },
+  fbook: {
+    title: "",
+    filtering: false,
+    sortable: false,
+    width: 20,
+    render: rowData =>
+      rowData.fbook ? <FB username={rowData.fbook} /> : undefined,
+  },
   Party: {
     title: "Party",
     sortable: true,
