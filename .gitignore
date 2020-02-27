@@ -3,3 +3,4 @@
 .cache.sqlite
 node_modules/
 .envrc
+build/
