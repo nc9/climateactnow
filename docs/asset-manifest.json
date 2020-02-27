@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/climatevotedata/static/css/main.81eb80d9.chunk.css",
-    "main.js": "/climatevotedata/static/js/main.a39120a6.chunk.js",
-    "main.js.map": "/climatevotedata/static/js/main.a39120a6.chunk.js.map",
+    "main.js": "/climatevotedata/static/js/main.9a5280f4.chunk.js",
+    "main.js.map": "/climatevotedata/static/js/main.9a5280f4.chunk.js.map",
     "runtime-main.js": "/climatevotedata/static/js/runtime-main.a1d33def.js",
     "runtime-main.js.map": "/climatevotedata/static/js/runtime-main.a1d33def.js.map",
-    "static/js/2.d8a7ed32.chunk.js": "/climatevotedata/static/js/2.d8a7ed32.chunk.js",
-    "static/js/2.d8a7ed32.chunk.js.map": "/climatevotedata/static/js/2.d8a7ed32.chunk.js.map",
+    "static/js/2.dc0d37c0.chunk.js": "/climatevotedata/static/js/2.dc0d37c0.chunk.js",
+    "static/js/2.dc0d37c0.chunk.js.map": "/climatevotedata/static/js/2.dc0d37c0.chunk.js.map",
     "index.html": "/climatevotedata/index.html",
-    "precache-manifest.f49f190407362db38e3a4307dc6e9cb9.js": "/climatevotedata/precache-manifest.f49f190407362db38e3a4307dc6e9cb9.js",
+    "precache-manifest.384603d2ba6dac3635cb828ac078d199.js": "/climatevotedata/precache-manifest.384603d2ba6dac3635cb828ac078d199.js",
     "service-worker.js": "/climatevotedata/service-worker.js",
     "static/css/main.81eb80d9.chunk.css.map": "/climatevotedata/static/css/main.81eb80d9.chunk.css.map",
-    "static/js/2.d8a7ed32.chunk.js.LICENSE.txt": "/climatevotedata/static/js/2.d8a7ed32.chunk.js.LICENSE.txt"
+    "static/js/2.dc0d37c0.chunk.js.LICENSE.txt": "/climatevotedata/static/js/2.dc0d37c0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a1d33def.js",
-    "static/js/2.d8a7ed32.chunk.js",
+    "static/js/2.dc0d37c0.chunk.js",
     "static/css/main.81eb80d9.chunk.css",
-    "static/js/main.a39120a6.chunk.js"
+    "static/js/main.9a5280f4.chunk.js"
   ]
 }
