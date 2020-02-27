@@ -2,7 +2,9 @@ import React, { useState, forwardRef } from "react"
 import ReactDOM from "react-dom"
 import MaterialTable from "material-table"
 import numeral from "numeral"
+import { format } from "date-fns"
 import data from "./vote_data.json"
+import updated from "./update_data.json"
 import "./index.css"
 
 import EmailIcon from "@material-ui/icons/Email"
@@ -207,6 +209,12 @@ const App = () => (
       Click column headings to sort. Double click to filter. [
       <a href="https://github.com/4dwins/climatevotedata">code</a>] [
       <a href="https://twitter.com/4dwins">@4dwins</a>]
+    </p>
+    <p>
+      <i>
+        Last Updated:{" "}
+        {format(new Date(updated["updated"] * 1000), "do LLLL u 'at' HH:mm")}{" "}
+      </i>
     </p>
     <Grid />
   </div>

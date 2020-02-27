@@ -9,15 +9,18 @@ import os
 import re
 import io
 import sys
+import json
 import requests
 import requests_cache
 import pandas as pd
 from datetime import timedelta
+from time import time
 
 STATISTICS_URI = "https://api.climateactnow.com.au/api/statistic"
 ELECTORATES_URI = "https://api.climateactnow.com.au/api/electorate"
 ELECTION_RESULTS_URI = "https://results.aec.gov.au/24310/Website/Downloads/HouseTppByDivisionDownload-24310.csv"
 OUTPUT_FILE = "src/vote_data.json"
+OUTPUT_FILE_UPDATE = "src/update_data.json"
 
 requests_cache.install_cache(".cache", expire_after=timedelta(hours=1))
 
@@ -161,6 +164,8 @@ vote_stats = vote_stats[
 vote_stats.to_json(OUTPUT_FILE, orient="table", index=False)
 print("Exported data to {}".format(OUTPUT_FILE))
 
+with open(OUTPUT_FILE_UPDATE, "w") as fp:
+    json.dump({"updated": int(time())}, fp)
 # vote_stats.sort_values(by="votes", ascending=False).loc[vote_stats['Party'] == "LP"].head(100)
 # vote_stats.to_csv("climate_action_vote_stats.csv", index=False)
 # vote_stats = vote_stats.sort_values(by="votes", ascending=True)
