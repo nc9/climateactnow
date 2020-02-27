@@ -1,6 +1,7 @@
 import React, { useState, forwardRef } from "react"
 import ReactDOM from "react-dom"
 import MaterialTable from "material-table"
+import numeral from "numeral"
 import data from "./vote_data.json"
 import "./index.css"
 
@@ -145,23 +146,27 @@ const columnMap = {
     sortable: true,
     type: "numeric",
     filtering: false,
+    render: data => numeral(data.Swing).format("+0.00") + "%",
   },
   Margin: {
     title: "2019 Margin (%)",
     sortable: true,
     type: "numeric",
     filtering: false,
+    render: data => numeral(data.Margin).format("0.00") + "%",
   },
   Vote_diff: {
     title: "2019 Margin Votes",
     sortable: true,
     type: "numeric",
     filtering: false,
+    render: data => numeral(data.Vote_diff).format("0,0"),
   },
   Participation: {
     title: "Climate Participation (%)",
     type: "numeric",
     filtering: false,
+    render: data => numeral(data.Participation).format("0.00") + "%",
   },
 }
 
