@@ -206,9 +206,9 @@ const App = () => (
       <a href="https://www.climateactnow.com.au/">climateactnow.com.au</a>
     </h3>
     <p>
-      [<a href="https://github.com/opendataau/climateactnow">code</a>] by [
+      [<a href="https://github.com/infotorch/climateactnow">code</a>] by [
       <a href="https://twitter.com/4dwins">@4dwins</a>] and{" "}
-      <a href="https://github.com/opendataau">Open Data AU</a>
+      <a href="https://github.com/infotorch">Infotorch</a>
     </p>
     <p>
       <i>
