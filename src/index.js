@@ -6,7 +6,7 @@ import "./index.css"
 
 const defaultColumnProperties = {
   sortable: false,
-  width: 120,
+  width: 140,
 }
 
 const columnMap = {
@@ -30,28 +30,36 @@ const columnMap = {
     name: "Electorate",
   },
   votes: {
-    name: "Votes",
+    name: "Climate Votes",
     sortable: true,
   },
+  // twitter: {
+  //   name: "Twitter",
+  //   // sortable: true,
+  // },
+  // fbook: {
+  //   name: "Facebook",
+  //   sortable: true,
+  // },
   Party: {
     name: "Party",
     sortable: true,
     filterable: true,
   },
   Swing: {
-    name: "Swing (%)",
+    name: "2019 Swing (%)",
     sortable: true,
   },
   Margin: {
-    name: "Margin (%)",
+    name: "2019 Margin (%)",
     sortable: true,
   },
   Vote_diff: {
-    name: "Vote Margin",
+    name: "2019 Margin",
     sortable: true,
   },
   Participation: {
-    name: "Participation (%)",
+    name: "Climate Participation (%)",
     sortable: true,
   },
 }

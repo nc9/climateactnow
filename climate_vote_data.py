@@ -140,8 +140,28 @@ vote_stats.drop(
     axis="columns",
 )
 vote_stats.drop(151, inplace=True)  # drop the "International" row
+
+# sort columns
+print(list(vote_stats.columns.values))
+
+vote_stats = vote_stats[
+    [
+        "preferred_name",
+        "electorate",
+        "state",
+        "Party",
+        # "twitter",
+        # "fbook",
+        "Swing",
+        "Margin",
+        "Vote_diff",
+        "votes",
+        "Participation",
+    ]
+]
+
 vote_stats.to_json(OUTPUT_FILE, orient="table")
-print("Exported data to ".format(OUTPUT_FILE))
+print("Exported data to {}".format(OUTPUT_FILE))
 
 # vote_stats.sort_values(by="votes", ascending=False).loc[vote_stats['Party'] == "LP"].head(100)
 # vote_stats.to_csv("climate_action_vote_stats.csv", index=False)
