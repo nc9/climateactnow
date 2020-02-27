@@ -1,4 +1,5 @@
 .env/
 .venv/
 .cache.sqlite
-node_modules/.envrc
+node_modules/
+.envrc
