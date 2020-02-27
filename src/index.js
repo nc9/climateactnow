@@ -200,20 +200,27 @@ const Grid = () => {
 
 const App = () => (
   <div className="App">
-    <h2>Climate Act Now Petition Data</h2>
-    <h3>
-      Vote at{" "}
-      <a href="https://www.climateactnow.com.au/">climateactnow.com.au</a>
-    </h3>
+    <div class="logo">
+      <img
+        src="https://www.climateactnow.com.au/img/logo.000643de.png"
+        alt="logo"
+      />
+    </div>
+    <h2>
+      <a href="https://www.climateactnow.com.au/">Climate Act Now</a> Petition
+      Data by Electorate
+    </h2>
     <p>
       By [<a href="https://twitter.com/4dwins">@4dwins</a>] and{" "}
       <a href="https://github.com/infotorch">Infotorch</a> -{" "}
-      <a href="mailto:hello@infotorch.org">email</a>
-    </p>
-    <p>
+      <a href="mailto:hello@infotorch.org">email</a>.
       <i>
+        {" "}
         Last Updated:{" "}
-        {format(new Date(updated["updated"] * 1000), "do LLLL u 'at' HH:mm")}{" "}
+        {format(
+          new Date(updated["updated"] * 1000),
+          "do LLLL u 'at' HH:mm",
+        )}{" "}
       </i>
     </p>
     <Grid />
