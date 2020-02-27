@@ -206,9 +206,9 @@ const App = () => (
       <a href="https://www.climateactnow.com.au/">climateactnow.com.au</a>
     </h3>
     <p>
-      [<a href="https://github.com/infotorch/climateactnow">code</a>] by [
-      <a href="https://twitter.com/4dwins">@4dwins</a>] and{" "}
-      <a href="https://github.com/infotorch">Infotorch</a>
+      By [<a href="https://twitter.com/4dwins">@4dwins</a>] and{" "}
+      <a href="https://github.com/infotorch">Infotorch</a> -{" "}
+      <a href="mailto:hello@infotorch.org">email</a>
     </p>
     <p>
       <i>
