@@ -136,6 +136,7 @@ const columnMap = {
       LP: "Liberal",
       NP: "National",
       IND: "Independent",
+      GRN: "Greens",
       LNP: "LNP",
     },
   },
