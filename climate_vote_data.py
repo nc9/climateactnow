@@ -12,13 +12,12 @@ import sys
 import requests
 import requests_cache
 import pandas as pd
-import plotly.graph_objects as go
 from datetime import timedelta
 
 STATISTICS_URI = "https://api.climateactnow.com.au/api/statistic"
 ELECTORATES_URI = "https://api.climateactnow.com.au/api/electorate"
 ELECTION_RESULTS_URI = "https://results.aec.gov.au/24310/Website/Downloads/HouseTppByDivisionDownload-24310.csv"
-OUTPUT_FILE = "vote_data.json"
+OUTPUT_FILE = "src/vote_data.json"
 
 requests_cache.install_cache(".cache", expire_after=timedelta(hours=1))
 
