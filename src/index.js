@@ -51,12 +51,6 @@ const defaultColumnProperties = {
 }
 
 const columnMap = {
-  index: {
-    title: "Index",
-    width: 80,
-    sortDescendingFirst: true,
-    filtering: false,
-  },
   preferred_name: {
     title: "Member Name",
     sortable: true,

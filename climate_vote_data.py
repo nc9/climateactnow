@@ -160,7 +160,7 @@ vote_stats = vote_stats[
     ]
 ]
 
-vote_stats.to_json(OUTPUT_FILE, orient="table")
+vote_stats.to_json(OUTPUT_FILE, orient="table", index=False)
 print("Exported data to {}".format(OUTPUT_FILE))
 
 # vote_stats.sort_values(by="votes", ascending=False).loc[vote_stats['Party'] == "LP"].head(100)
