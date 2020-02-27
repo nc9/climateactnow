@@ -96,7 +96,11 @@ const Grid = () => {
 
 const App = () => (
   <div className="App">
-    <h2>Climate Action Data</h2>
+    <h2>Climate Action Australia Vote Data</h2>
+    <h3>
+      Vote at{" "}
+      <a href="https://www.climateactnow.com.au/">climateactnow.com.au</a>
+    </h3>
     <p>
       Click column headings to sort. Double click to filter. [
       <a href="https://github.com/4dwins/climatevotedata">code</a>] [

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0af083a630fd4956da59a1c38764726b",
+    "revision": "4dcebdbd1ccb226bf1cfc66c034c12e5",
     "url": "/climatevotedata/index.html"
   },
   {
-    "revision": "cb15d25a0a04da1e5a8f",
+    "revision": "131d60ac4ada8c566de9",
     "url": "/climatevotedata/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/climatevotedata/static/js/2.df3b8de4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cb15d25a0a04da1e5a8f",
-    "url": "/climatevotedata/static/js/main.a4004eba.chunk.js"
+    "revision": "131d60ac4ada8c566de9",
+    "url": "/climatevotedata/static/js/main.30b31a3d.chunk.js"
   },
   {
     "revision": "6d5bafb39033f345abde",
