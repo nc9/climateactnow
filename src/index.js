@@ -1,103 +1,159 @@
-import React, { useState } from "react"
+import React, { useState, forwardRef } from "react"
 import ReactDOM from "react-dom"
-import ReactDataGrid from "react-data-grid"
+import MaterialTable from "material-table"
 import data from "./vote_data.json"
 import "./index.css"
+
+import AddBox from "@material-ui/icons/AddBox"
+import ArrowDownward from "@material-ui/icons/ArrowDownward"
+import Check from "@material-ui/icons/Check"
+import ChevronLeft from "@material-ui/icons/ChevronLeft"
+import ChevronRight from "@material-ui/icons/ChevronRight"
+import Clear from "@material-ui/icons/Clear"
+import DeleteOutline from "@material-ui/icons/DeleteOutline"
+import Edit from "@material-ui/icons/Edit"
+import FilterList from "@material-ui/icons/FilterList"
+import FirstPage from "@material-ui/icons/FirstPage"
+import LastPage from "@material-ui/icons/LastPage"
+import Remove from "@material-ui/icons/Remove"
+import SaveAlt from "@material-ui/icons/SaveAlt"
+import Search from "@material-ui/icons/Search"
+import ViewColumn from "@material-ui/icons/ViewColumn"
+
+const tableIcons = {
+  Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
+  Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
+  Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+  Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
+  DetailPanel: forwardRef((props, ref) => (
+    <ChevronRight {...props} ref={ref} />
+  )),
+  Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
+  Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
+  Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
+  FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
+  LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
+  NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+  PreviousPage: forwardRef((props, ref) => (
+    <ChevronLeft {...props} ref={ref} />
+  )),
+  ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+  Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
+  SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
+  ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
+  ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
+}
 
 const defaultColumnProperties = {
   sortable: false,
   width: 140,
+  filtering: true,
 }
 
 const columnMap = {
   index: {
-    name: "Index",
+    title: "Index",
     width: 80,
     sortDescendingFirst: true,
+    filtering: false,
   },
   preferred_name: {
-    name: "Name",
+    title: "Member Name",
     sortable: true,
     width: 230,
   },
   state: {
-    name: "State",
+    title: "State",
     sortable: true,
-    filterable: true,
+    filtering: true,
     width: 80,
+    lookup: {
+      NSW: "NSW",
+      VIC: "Victoria",
+      QLD: "Queensland",
+      TAS: "Tasmania",
+      SA: "South Aus",
+      WA: "West Aus",
+      ACT: "ACT",
+      NT: "NT",
+    },
   },
   electorate: {
-    name: "Electorate",
+    title: "Electorate",
   },
   votes: {
-    name: "Climate Votes",
+    title: "Climate Votes",
     sortable: true,
+    type: "numeric",
+    filtering: false,
   },
   // twitter: {
-  //   name: "Twitter",
+  //   title: "Twitter",
   //   // sortable: true,
   // },
   // fbook: {
-  //   name: "Facebook",
+  //   title: "Facebook",
   //   sortable: true,
   // },
   Party: {
-    name: "Party",
+    title: "Party",
     sortable: true,
-    filterable: true,
+    filtering: true,
+    lookup: {
+      ALP: "Labor",
+      LP: "Liberal",
+      NP: "National",
+      IND: "Independent",
+      LNP: "LNP",
+    },
   },
   Swing: {
-    name: "2019 Swing (%)",
+    title: "2019 Swing (%)",
     sortable: true,
+    type: "numeric",
+    filtering: false,
   },
   Margin: {
-    name: "2019 Margin (%)",
+    title: "2019 Margin (%)",
     sortable: true,
+    type: "numeric",
+    filtering: false,
   },
   Vote_diff: {
-    name: "2019 Margin",
+    title: "2019 Margin Votes",
     sortable: true,
+    type: "numeric",
+    filtering: false,
   },
   Participation: {
-    name: "Climate Participation (%)",
-    sortable: true,
+    title: "Climate Participation (%)",
+    type: "numeric",
+    filtering: false,
   },
 }
 
 const getColumns = d =>
   d.schema.fields.map(i => ({
-    key: i["name"],
+    field: i["name"],
     ...defaultColumnProperties,
     ...columnMap[i["name"]],
   }))
-
-const sortRows = (initialRows, sortColumn, sortDirection) => rows => {
-  const comparer = (a, b) => {
-    console.log(sortDirection, sortColumn, a[sortColumn], b[sortColumn])
-    if (sortDirection === "ASC") {
-      return a[sortColumn] > b[sortColumn] ? 1 : -1
-    } else if (sortDirection === "DESC") {
-      return a[sortColumn] < b[sortColumn] ? 1 : -1
-    }
-  }
-
-  return sortDirection === "NONE" ? initialRows : [...rows].sort(comparer)
-}
 
 const Grid = () => {
   const [rows, setRows] = useState(data.data)
   const columns = getColumns(data)
 
   return (
-    <ReactDataGrid
+    <MaterialTable
       columns={columns}
-      rowGetter={i => rows[i]}
-      rowsCount={rows.length}
-      enableCellSelect={true}
-      minHeight={600}
-      onGridSort={(sortColumn, sortDirection) =>
-        setRows(sortRows(data.data, sortColumn, sortDirection))
-      }
+      data={rows}
+      icons={tableIcons}
+      options={{
+        filtering: true,
+        pageSize: 20,
+        pageSizeOptions: [20, 50, 100, 150],
+      }}
+      title="Climate Action Votes by Electorate"
     />
   )
 }
