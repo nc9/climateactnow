@@ -4,3 +4,4 @@
 node_modules/
 .envrc
 build/
+.ipynb_checkpoints/
