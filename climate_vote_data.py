@@ -153,7 +153,7 @@ vote_stats = vote_stats[
         "twitter",
         "email",
         "fbook",
-        "Swing",
+        # "Swing",
         "Margin",
         "Vote_diff",
         "votes",
