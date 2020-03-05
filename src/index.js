@@ -104,6 +104,7 @@ const columnMap = {
     title: "Climate Votes",
     sortable: true,
     type: "numeric",
+    defaultSort: "desc",
     filtering: false,
   },
   email: {
