@@ -212,8 +212,7 @@ const App = () => (
       Data by Electorate
     </h2>
     <p>
-      By [<a href="https://twitter.com/4dwins">@4dwins</a>] and{" "}
-      <a href="https://github.com/infotorch">Infotorch</a> -{" "}
+      By <a href="https://pagecog.com">Pagecog</a>
       <a href="mailto:hello@infotorch.org">email</a>.
       <i>
         {" "}
